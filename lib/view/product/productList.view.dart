@@ -52,7 +52,6 @@ class _ProductListViewState extends State<ProductListView> {
                     onTap: (){
                       productController.deleteProduct(product.id!);
                     },
-
                     child:const  Icon(MdiIcons.trashCanOutline)),
                 onTap: (){
                   Navigator.of(context).push(

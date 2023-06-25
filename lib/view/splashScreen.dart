@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:aponwola_admin/common/SizeConfig.dart';
 import 'package:aponwola_admin/common/app_theme.dart';
 import 'package:aponwola_admin/view/auth/login.view.dart';
+import 'package:aponwola_admin/view/home/home.view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
               // builder: (BuildContext context) => FirstPrint()),
-                builder: (BuildContext context) => LoginView()),
+                builder: (BuildContext context) => HomeView()),
                 (Route<dynamic> route) => false);
       } else {
         // Navigator.of(context).pushAndRemoveUntil(
