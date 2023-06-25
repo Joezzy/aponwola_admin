@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "257488191952",
+    "project_id": "aponwola-79e01",
+    "storage_bucket": "aponwola-79e01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257488191952:android:8459fb75dff3a979dc39d5",
+        "android_client_info": {
+          "package_name": "com.aponwola.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257488191952-uq75o2s6tp9bdvonpdpg5frfm4hma2k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrtIMzmqmCUvtj14yXLu-l2XvxWF4I5mE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257488191952-uq75o2s6tp9bdvonpdpg5frfm4hma2k9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257488191952:android:b62d66bfb7ff4700dc39d5",
+        "android_client_info": {
+          "package_name": "com.aponwola.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257488191952-uq75o2s6tp9bdvonpdpg5frfm4hma2k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrtIMzmqmCUvtj14yXLu-l2XvxWF4I5mE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257488191952-uq75o2s6tp9bdvonpdpg5frfm4hma2k9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
