@@ -1,4 +1,5 @@
 
+import 'package:aponwola_admin/common/SizeConfig.dart';
 import 'package:aponwola_admin/controllers/product.controller.dart';
 import 'package:aponwola_admin/data/product.dart';
 import 'package:aponwola_admin/view/product/addProduct.view.dart';
@@ -40,28 +41,28 @@ class _ProductListViewState extends State<ProductListView> {
             ],
           ),
           body: ListView.builder(
+            padding: EdgeInsets.symmetric(horizontal: MySize.size23),
             itemCount: productController.productList.length,
             itemBuilder: (context,index){
               Product product=productController.productList[index];
-              return Container(
-                  child: ListTile(
-                    title: Text(product.name!),
-                    subtitle: Text(product.price.toString()),
-                    trailing: InkWell(
-                        onTap: (){
-                          productController.deleteProduct(product.id!);
-                        },
-
-                        child: Icon(MdiIcons.trashCanOutline)),
+              return   ListTile(
+                title: Text(product.name!),
+                subtitle: Text(product.price.toString()),
+                trailing: InkWell(
                     onTap: (){
-                      Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => AddProductView(
-                              product: product,
-                            )));
-
+                      productController.deleteProduct(product.id!);
                     },
-                  ));
+
+                    child:const  Icon(MdiIcons.trashCanOutline)),
+                onTap: (){
+                  Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => AddProductView(
+                          product: product,
+                        )));
+
+                },
+              );
             },
 
           ),
