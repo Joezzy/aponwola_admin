@@ -6,6 +6,7 @@ import 'package:aponwola_admin/common/app_theme.dart';
 import 'package:aponwola_admin/util/utils.dart';
 
 
+
 class MyText extends StatelessWidget {
   final Function(String value)? onChanged;
   String? Function(String? value)? validator;
@@ -37,7 +38,9 @@ class MyText extends StatelessWidget {
     this.hintText = "",
     this.initialValue = '',
     this.width = double.infinity,
-    this.borderRadius = 10,
+    // this.borderRadius = 10,
+    this.borderRadius = 20,
+
     this.height = 20,
     this.textStyle,
     this.suffixIcon,
@@ -62,11 +65,13 @@ class MyText extends StatelessWidget {
     Screen screen = getScreen();
     return Container(
       width: (screen == Screen.tab) ? width / 1.4 : width,
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: TextFormField(
         enabled: isEnabled,
         onChanged: onChanged,
         controller: controller,
         obscureText: isPasswordField,
+        obscuringCharacter: "#",
         maxLines: maxLine,
         readOnly: readOnly,
         maxLength: maxLength,
@@ -75,19 +80,44 @@ class MyText extends StatelessWidget {
             ? TextInputType.number
             : keyboardType,
         inputFormatters: (keyboardType == TextInputType.number)
-            ? [
-          new FilteringTextInputFormatter.allow(RegExp("[0-9.]")),
-        ]
+            ? [FilteringTextInputFormatter.allow(RegExp("[0-9.]")),]
             : null,
         textAlign: alignCenter?TextAlign.center:TextAlign.left,
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(color: AppTheme.placeHolder,fontWeight: FontWeight.w500),
+          hintStyle: const TextStyle(color: AppTheme.placeHolder,fontWeight: FontWeight.w500),
           counterText: "",
-
-         border: InputBorder.none,
+         // border: InputBorder.none,
+          enabledBorder: OutlineInputBorder(
+            borderSide:const  BorderSide(
+              color: AppTheme.primaryColor,
+              width: 0.5,
+            ),
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide:const  BorderSide(
+              color: AppTheme.primaryColor,
+              width: 0.5,
+            ),
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+          border: OutlineInputBorder(
+            borderSide:const  BorderSide(
+              color: Color(0x00000000),
+              width: 0.5,
+            ),
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+          disabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Color(0x00000000),
+              width: 0.5,
+            ),
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
           filled: true,
-          fillColor: Color(0xFFF2F4F7),
+          fillColor: Colors.white,
           prefixIcon:  usesPrefixIcon
               ? InkWell(
             onTap: onPrefixItemTapped,
@@ -103,7 +133,7 @@ class MyText extends StatelessWidget {
           )
               : null,
           contentPadding: (contentPadding == null)
-              ? EdgeInsets.symmetric(vertical: 3, horizontal: 10)
+              ? const EdgeInsets.symmetric(vertical: 20, horizontal: 20)
               : contentPadding,
         ),
         style: textStyle,
@@ -118,6 +148,8 @@ class MyDropDown extends StatelessWidget {
   final String drop_value;
   final double width;
   final double fontSize;
+  double borderRadius;
+
   void Function(String? item)? onChanged;
   final List<DropdownMenuItem<String>> itemFunction;
 
@@ -129,19 +161,20 @@ class MyDropDown extends StatelessWidget {
     this.suffixIcon = const Text("show"),
     required this.itemFunction,
     this.onChanged,
+    this.borderRadius=20
   });
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       width: (getScreen() == Screen.tab) ? width / 1.4 : width,
       child: DropdownButtonFormField<String>(
         value: drop_value,
-        isDense: true,
+        // isDense: true,
         // itemHeight: null,
-        icon: Visibility(visible: true, child: Icon(Icons.keyboard_arrow_down)),
+        icon: const Visibility(visible: true, child: Icon(Icons.keyboard_arrow_down)),
         style: TextStyle(
             color: Colors.black,
             letterSpacing: 0.1,
@@ -151,38 +184,37 @@ class MyDropDown extends StatelessWidget {
             hintText: hint,
             hintStyle: const TextStyle(color: AppTheme.placeHolder,fontWeight: FontWeight.w500),
             counterText: "",
-            border:InputBorder.none,
-            // enabledBorder: OutlineInputBorder(
-            //   borderSide: BorderSide(
-            //     color: Colors.grey.withOpacity(0.5),
-            //     width: 0.5,
-            //   ),
-            //   borderRadius: BorderRadius.circular(8),
-            // ),
-            // focusedBorder: OutlineInputBorder(
-            //   borderSide: BorderSide(
-            //     color: AppTheme.primaryColor,
-            //     width: 0.5,
-            //   ),
-            //   borderRadius: BorderRadius.circular(10),
-            // ),
-            // border: OutlineInputBorder(
-            //   borderSide: BorderSide(
-            //     color: Color(0x00000000).withOpacity(0.1),
-            //     width: 0.2,
-            //   ),
-            //   borderRadius: BorderRadius.circular(10),
-            // ),
-            // disabledBorder: OutlineInputBorder(
-            //   borderSide: BorderSide(
-            //     color: Color(0x00000000),
-            //     width: 0.5,
-            //   ),
-            //   borderRadius: BorderRadius.circular(10),
-            // ),
-            filled: true,
-            fillColor: AppTheme.o3Grey,
-            contentPadding: EdgeInsets.symmetric(vertical: -10, horizontal: 10)),
+            enabledBorder: OutlineInputBorder(
+              borderSide:const  BorderSide(
+                color: AppTheme.primaryColor,
+                width: 0.5,
+              ),
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide:const  BorderSide(
+                color: AppTheme.primaryColor,
+                width: 0.5,
+              ),
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+            border: OutlineInputBorder(
+              borderSide:const  BorderSide(
+                color: Color(0x00000000),
+                width: 0.5,
+              ),
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+            disabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: Color(0x00000000),
+                width: 0.5,
+              ),
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+
+
+            contentPadding:const EdgeInsets.only(bottom: 35, left: 20,right: 20)),
         isExpanded: true,
         onChanged: onChanged,
         items: itemFunction,
@@ -190,6 +222,7 @@ class MyDropDown extends StatelessWidget {
     );
   }
 }
+
 
 class SearchTxt extends StatelessWidget {
   final TextEditingController? controller;
@@ -274,6 +307,7 @@ class SearchTxt extends StatelessWidget {
     );
   }
 }
+
 
 class SearchDate extends StatelessWidget {
   const SearchDate({

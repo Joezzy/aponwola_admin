@@ -1,5 +1,6 @@
 
 import 'package:aponwola_admin/common/SizeConfig.dart';
+import 'package:aponwola_admin/controllers/category.controller.dart';
 import 'package:aponwola_admin/controllers/product.controller.dart';
 import 'package:aponwola_admin/data/product.dart';
 import 'package:aponwola_admin/view/product/addProduct.view.dart';
@@ -17,9 +18,11 @@ class ProductListView extends StatefulWidget {
 
 class _ProductListViewState extends State<ProductListView> {
   final productController=Get.put(ProductController());
+  final categoryController=Get.put(CategoryController());
   @override
   void initState() {
     super.initState();
+    categoryController.getCategories();
     productController.getProducts();
   }
   @override
@@ -42,9 +45,9 @@ class _ProductListViewState extends State<ProductListView> {
           ),
           body: ListView.builder(
             padding: EdgeInsets.symmetric(horizontal: MySize.size23),
-            itemCount: productController.productList.length,
+            itemCount: productController.productListAll.length,
             itemBuilder: (context,index){
-              Product product=productController.productList[index];
+              Product product=productController.productListAll[index];
               return   ListTile(
                 title: Text(product.name!),
                 subtitle: Text(product.price.toString()),

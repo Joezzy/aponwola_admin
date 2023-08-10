@@ -28,19 +28,21 @@ class MyButton extends StatelessWidget {
   Widget? imageIcon;
 
   MyButton(
-      {this.width = double.maxFinite,
-      this.height = 45,
+      {
+        Key? key,
+        this.width = double.maxFinite,
+      this.height = 60,
       this.text = "Text",
       this.disabledButtonTextColor = AppTheme.o3Grey,
       this.fontColor = Colors.white,
       this.borderColor ,
       this.fontWeight = FontWeight.w500,
-      this.enabledColor = AppTheme.o3Blue,
+      this.enabledColor = AppTheme.primaryColor,
       this.disabledColor = AppTheme.o3Grey,
       this.fontSize = 16,
       this.enabled = true,
       this.isBordered = false,
-      this.borderRadius = 4,
+      this.borderRadius = 20,
       this.activityIndicatorSize = 20,
       this.activityIndicatorLineWidth = 3,
       this.icon,
@@ -57,9 +59,10 @@ class MyButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        // padding: EdgeInsets.symmetric(vertical: MySize.size50),
+        margin: EdgeInsets.symmetric(vertical: MySize.size10),
         decoration: BoxDecoration(
-          color: enabled ? enabledColor : disabledColor,
+          color: enabled ? enabledColor
+              : disabledColor,
           borderRadius: BorderRadius.circular(borderRadius),
           border: Border.all(color:borderColor==null?enabledColor:borderColor!,width: 1 )
         ),

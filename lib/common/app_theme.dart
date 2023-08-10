@@ -1,11 +1,10 @@
-// import 'package:aponwola_admin/common/currencyHelper.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:aponwola_admin/common/currencyHelper.dart';
 
 
 class AppTheme {
-  static const Color primaryColor = Color(0xFF212121);
+  static const Color primaryColor = Color(0xFFDA291C);
+  static const Color secondColor = Color(0xFFF2A900);
   static const Color o3Blue = Color(0xFF002A4A);
   static const Color o3Orange = Color(0xFFFFA73E);
   static const Color o3Grey = Color(0xFFE4E7EC);
@@ -113,8 +112,7 @@ class AppTheme {
     var amt = NumberFormat.currency(
         symbol: '', locale: 'en-UK', decimalDigits: digits)
         .format(amount);
-    return "N${amt}";
-    // return "${currency_Symbol("NGN")}${amt}";
+    return "\u20A6${amt}";
   }
 
 

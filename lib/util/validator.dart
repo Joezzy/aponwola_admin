@@ -2,14 +2,14 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 class Validator{
 
-  var emailValidator = MultiValidator([
+  static var emailValidator = MultiValidator([
     RequiredValidator(errorText: 'Email is required'),
     EmailValidator(errorText: 'Enter a valid email address')
   ]);
 
-  var passwordValidator = MultiValidator([
+  static var passwordValidator = MultiValidator([
     RequiredValidator(errorText: 'Password is required'),
-    MinLengthValidator(8, errorText: 'Password must be at least 8 characters long'),
+    MinLengthValidator(8, errorText: 'Password must be at least 8 digits long'),
     PatternValidator(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$',
         errorText: 'should contain at least one upper case '
             '\nshould contain at least one lower case '
@@ -17,6 +17,6 @@ class Validator{
             '\nAt least one Special character( ! @ # \$ & * ~ )')
   ]);
 
-  var requiredValidator = RequiredValidator(errorText: 'This field is required');
+  static var requiredValidator = RequiredValidator(errorText: 'This field is required');
 
 }

@@ -1,6 +1,6 @@
 {
-    "name": "aponwola_admiin",
-    "short_name": "aponwola_admiin",
+    "name": "aponwola_admin",
+    "short_name": "aponwola_admin",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

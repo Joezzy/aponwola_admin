@@ -68,7 +68,7 @@ class DefaultFirebaseOptions {
     projectId: 'aponwola-79e01',
     storageBucket: 'aponwola-79e01.appspot.com',
     iosClientId: '257488191952-8d09gjomij9al9spvch3kji88gsohkep.apps.googleusercontent.com',
-    iosBundleId: 'com.aponwola.admin.aponwolaAdmiin',
+    iosBundleId: 'com.aponwola.admin',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -78,6 +78,6 @@ class DefaultFirebaseOptions {
     projectId: 'aponwola-79e01',
     storageBucket: 'aponwola-79e01.appspot.com',
     iosClientId: '257488191952-8d09gjomij9al9spvch3kji88gsohkep.apps.googleusercontent.com',
-    iosBundleId: 'com.aponwola.admin.aponwolaAdmiin',
+    iosBundleId: 'com.aponwola.admin',
   );
 }

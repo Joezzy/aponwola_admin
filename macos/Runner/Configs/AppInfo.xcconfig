@@ -8,7 +8,7 @@
 PRODUCT_NAME = aponwola_admiin
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.aponwola.admin.aponwolaAdmiin
+PRODUCT_BUNDLE_IDENTIFIER = com.aponwola.admin
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2023 com.aponwola.admin. All rights reserved.
