@@ -45,9 +45,10 @@ class _SplashScreenState extends State<SplashScreen> {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       initScreen = prefs.getString("initScreen");
       await prefs.setString("initScreen", "1");
-      await authController.getAuth(context);
+       authController.getAuth(context);
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
