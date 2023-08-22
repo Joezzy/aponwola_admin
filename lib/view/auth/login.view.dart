@@ -5,7 +5,6 @@ import 'package:aponwola_admin/common/app_theme.dart';
 import 'package:aponwola_admin/controllers/auth.controller.dart';
 import 'package:aponwola_admin/custom_widget/btn.dart';
 import 'package:aponwola_admin/custom_widget/txt.dart';
-import 'package:aponwola_admin/routes/app.routes.dart';
 import 'package:aponwola_admin/util/validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -56,16 +55,6 @@ final  authController=Get.put(AuthController());
 
                   ),
 
-                ),
-              ),
-              Positioned(
-                top: 50,
-                right:10,
-                child: TextButton(
-                  onPressed: (){
-                    Navigator.of(context).pushNamedAndRemoveUntil(AppRoutes.DashRoute, (Route<dynamic> route) => false);
-                  },
-                  child:const  Text("Skip",style: TextStyle(fontWeight: FontWeight.bold),),
                 ),
               ),
 
@@ -141,24 +130,6 @@ final  authController=Get.put(AuthController());
 
 
                 SizedBox(height:MySize.size20),
-                GestureDetector(
-                  onTap: (){
-                    Navigator.of(context).pushNamedAndRemoveUntil(AppRoutes.RegisterFromLoginRoute, (Route<dynamic> route) => false);
-                  },
-
-                  child: Center(
-                    child: RichText(
-                      text: const TextSpan(
-                          style: TextStyle(color: Colors.black, fontSize: 16),
-                          children: [
-                            TextSpan(text: "Don't have an account? " ),
-                            TextSpan(
-                                text: 'Sign-up',
-                                style: TextStyle(fontWeight: FontWeight.bold,color: AppTheme.primaryColor)),
-                          ]),
-                    ),
-                  ),
-                )
 
 
 

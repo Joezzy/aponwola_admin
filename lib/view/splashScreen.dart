@@ -5,21 +5,13 @@ import 'package:aponwola_admin/controllers/auth.controller.dart';
 import 'package:aponwola_admin/services/api.service.dart';
 import 'package:aponwola_admin/testiing.dart';
 import 'package:aponwola_admin/view/auth/login.view.dart';
-import 'package:aponwola_admin/view/auth/welcome.view.dart';
 import 'package:aponwola_admin/view/category/categoryList.view.dart';
-import 'package:aponwola_admin/view/home/home.view.dart';
 import 'package:aponwola_admin/view/product/productList/productList.view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-
-
-// Step 1.
-// String dropdownValue = 'Dog';
-// Step 2.
 
 
 class SplashScreen extends StatefulWidget {

@@ -1,7 +1,6 @@
 import 'package:aponwola_admin/firebase_options.dart';
-import 'package:aponwola_admin/routes/app.routes.dart';
 import 'package:aponwola_admin/testiing.dart';
-import 'package:aponwola_admin/view/home/home.view.dart';
+import 'package:aponwola_admin/view/home.dart';
 import 'package:aponwola_admin/view/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,13 +22,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return GetMaterialApp(
-      title: 'Aponwola',
+      title: 'Aponwola admin' ,
       theme: ThemeData(
         primarySwatch:Colors.red,
       ),
-      // home: const OpenContainerTransformDemo(),
-      initialRoute: AppRoutes.SplashRoute,
-      routes: AppRoutes.routes,
+      home: const MainHome(),
+
     );
   }
 }

@@ -66,12 +66,11 @@ Future addCategory(context,file)async {
     img=await uploadImageToStorage("categories/${nameController.value.text}", file);
   }
 
-
    await firebase.collection('categories')
         .add({
       'name': nameController.value.text,
       'description': descController.value.text,
-     'type': categoryType.value,
+      'type': categoryType.value,
       'image': img
     }).then((value) {
       print("Product Added");

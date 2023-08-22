@@ -4,11 +4,10 @@ import 'dart:io';
 import 'package:aponwola_admin/common/constant.dart';
 import 'package:aponwola_admin/common/myDialog.dart';
 import 'package:aponwola_admin/data/CurrentUser.dart';
-import 'package:aponwola_admin/routes/app.routes.dart';
 import 'package:aponwola_admin/services/api.service.dart';
 import 'package:aponwola_admin/util/authHandler.dart';
-import 'package:aponwola_admin/view/dashboad/dashboard.dart';
-import 'package:aponwola_admin/view/home/home.view.dart';
+import 'package:aponwola_admin/view/auth/login.view.dart';
+import 'package:aponwola_admin/view/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -108,7 +107,7 @@ class AuthController extends GetxController{
           ).then((value) {
             Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (_) => DashboardScreen()));
+                MaterialPageRoute(builder: (_) => const MainHome()));
           });
         }
 
@@ -175,19 +174,18 @@ class AuthController extends GetxController{
          print(ApiService.me.name);
          print(ApiService.me.id);
          // DashboardScreen
-         Navigator.of(context)
-             .pushNamedAndRemoveUntil(
-             AppRoutes.DashRoute, (Route<dynamic> route) => false);
+
          //
-         // Navigator.of(context).pushAndRemoveUntil(
-         //     MaterialPageRoute(
-         //         builder: (BuildContext context) => WelcomeView()),
-         //     // builder: (BuildContext context) =>  ProductListView()),
-         //         (Route<dynamic> route) => false);
+         Navigator.of(context).pushAndRemoveUntil(
+             MaterialPageRoute(
+                 builder: (BuildContext context) => LoginView()),
+             // builder: (BuildContext context) =>  ProductListView()),
+                 (Route<dynamic> route) => false);
        }else{
-         Navigator.of(context)
-             .pushNamedAndRemoveUntil(
-             AppRoutes.WelcomeRoute, (Route<dynamic> route) => false);
+         Navigator.of(context).pushAndRemoveUntil(
+             MaterialPageRoute(
+                 builder: (BuildContext context) =>const  MainHome()),
+                 (Route<dynamic> route) => false);
        }
      });
      isLoading.value=false;
@@ -215,8 +213,12 @@ class AuthController extends GetxController{
  logout(context)async{
    isLoading.value=true;
    await  auth.signOut();
-  Navigator.of(context)
-      .pushNamedAndRemoveUntil(AppRoutes.LoginRoute, (Route<dynamic> route) => false);
+   Navigator.of(context).pushAndRemoveUntil(
+       MaterialPageRoute(
+           builder: (BuildContext context) => LoginView()),
+           (Route<dynamic> route) => false);
+
+
    isLoading.value=false;
  }
 }

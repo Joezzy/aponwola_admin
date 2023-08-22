@@ -7,8 +7,6 @@ import 'package:aponwola_admin/custom_widget/btn.dart';
 import 'package:aponwola_admin/custom_widget/txt.dart';
 import 'package:aponwola_admin/data/order.dart';
 import 'package:aponwola_admin/data/product.dart';
-import 'package:aponwola_admin/routes/app.routes.dart';
-import 'package:aponwola_admin/view/home/home.view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -66,7 +64,7 @@ class _FoodDetailViewState extends State<FoodDetailView> {
                   ),
                 ),
 
-                const   Header(text:"Food items" ,),
+                const   Text("Food items" ,),
                 Container(
                   decoration: BoxDecoration(
                       color: AppTheme.primaryColor.withOpacity(0.05),

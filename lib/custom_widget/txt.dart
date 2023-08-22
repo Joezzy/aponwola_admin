@@ -146,7 +146,7 @@ class MyDropDown extends StatelessWidget {
   final Widget suffixIcon;
   final String hint;
   final String drop_value;
-  final double width;
+  final double? width;
   final double fontSize;
   double borderRadius;
 
@@ -157,7 +157,7 @@ class MyDropDown extends StatelessWidget {
     this.drop_value = "",
     this.hint = "",
     this.fontSize=14,
-    this.width = double.maxFinite,
+    this.width ,
     this.suffixIcon = const Text("show"),
     required this.itemFunction,
     this.onChanged,
@@ -169,7 +169,7 @@ class MyDropDown extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return SizedBox(
-      width: (getScreen() == Screen.tab) ? width / 1.4 : width,
+      width: screenWidth,
       child: DropdownButtonFormField<String>(
         value: drop_value,
         // isDense: true,

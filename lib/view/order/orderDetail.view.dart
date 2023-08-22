@@ -7,8 +7,7 @@ import 'package:aponwola_admin/custom_widget/btn.dart';
 import 'package:aponwola_admin/custom_widget/txt.dart';
 import 'package:aponwola_admin/data/order.dart';
 import 'package:aponwola_admin/data/product.dart';
-import 'package:aponwola_admin/routes/app.routes.dart';
-import 'package:aponwola_admin/view/home/home.view.dart';
+
 import 'package:aponwola_admin/view/order/foodDetail.view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,7 +50,7 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           children: [
             Column(
               children: [
-                const   Header(text:"Food items" ,),
+                const   Text("Food items" ,),
                 SizedBox(
                   height: MySize.size90 * widget.orderGroup.order!.length,
                   child: ListView.separated(

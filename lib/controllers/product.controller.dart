@@ -4,7 +4,6 @@ import 'dart:typed_data';
 
 import 'package:aponwola_admin/common/constant.dart';
 import 'package:aponwola_admin/common/myDialog.dart';
-import 'package:aponwola_admin/controllers/cartController.dart';
 import 'package:aponwola_admin/data/product.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -12,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductController extends GetxController{
-  final cartController=Get.put(CartController());
 
   CollectionReference products = FirebaseFirestore.instance.collection('products');
   final FirebaseStorage _storage=FirebaseStorage.instance;
@@ -182,130 +180,16 @@ var selectedProteinProduct=[].obs;
 var selectedSideProduct=[].obs;
 var selectedBowlProduct=[].obs;
 
-  List<Product> sideProduct_List=[];
-  List<Product> proteinProduct_List=[];
-  List<Product> bowlProduct_List=[];
-
-selectProteinMethod(Product prod){
-  // Product  product= productListAll.where((i) => i.id!.toLowerCase()!.contains(id!)).toList().first;
-  if(selectedProteinProduct.contains(prod.id!)){
-    selectedProteinProduct.remove(prod.id!);
-    proteinProduct_List.remove(prod);
-  }else{
-    selectedProteinProduct.add(prod.id!);
-    proteinProduct_List.add(prod);
-  }
-  calculateTotal();
-
-}
-
-selectSideMethod(Product prod){
-  // Product  product= productListAll.where((i) => i.id!.toLowerCase()!.contains(id!)).toList().first;
-  if(selectedSideProduct.contains(prod.id!)){
-    selectedSideProduct.remove(prod.id);
-    sideProduct_List.remove(prod);
-  }else{
-    selectedSideProduct.add(prod.id);
-    sideProduct_List.add(prod);
-  }
-  calculateTotal();
-  }
-
-selectBowlMethod(Product prod){
-  if(selectedBowlProduct.contains(prod.id!)){
-    selectedBowlProduct.remove(prod.id);
-    bowlProduct_List.remove(prod);
-  }else{
-    selectedBowlProduct.add(prod.id);
-    bowlProduct_List.add(prod);
-  }
-  calculateTotal();
-  }
-
 
 clearDetailPage(){
   productListDailyMain.clear();
   productListDailySide.clear();
   productListBowl.clear();
-  productListDailyProtein.clear();
-   selectedMainProduct.value=Product();
-   selectedProteinProduct.clear();
-   selectedSideProduct.clear();
-   sideProduct_List.clear();
-   proteinProduct_List.clear();
-   bowlProduct_List.clear();
-   selectedBowlProduct.clear();
-   totalPrice.value=0.0;
-}
-
-addProductToCart(context){
-
-
-
-      List <Product> cartProduct=[];
-      if(bowlProduct_List.isNotEmpty){
-        for(var i=0; i<bowlProduct_List.length; i++){
-          cartProduct.add(bowlProduct_List[i]);
-        }
-      }
-
-      if(selectedMainProduct.value.id!=null)
-        {
-          cartProduct.add(selectedMainProduct.value);
-        }
-
-      if(proteinProduct_List.isNotEmpty){
-        for(var i=0; i<proteinProduct_List.length; i++){
-          cartProduct.add(proteinProduct_List[i]);
-        }
-      }
-
-      if(sideProduct_List.isNotEmpty){
-        for(var i=0; i<sideProduct_List.length; i++){
-          cartProduct.add(sideProduct_List[i]);
-        }
-      }
-
-
-      if(cartProduct.isEmpty){
-        Dialogs.alertBox(context, "Warning", "Select at least one item", DialogType.warning);
-      }else{
-        cartController.addToCart(cartProduct);
-        Navigator.pop(context);
-      }
-
 
 }
+
 
  var totalPrice=0.0.obs;
 
-  calculateTotal(){
-    totalPrice.value=0.0;
-
-    if(selectedMainProduct.value.id!=null)
-    {
-      totalPrice.value=totalPrice.value + selectedMainProduct.value.price!;
-    }
-
-    if(proteinProduct_List.isNotEmpty){
-      for(var i=0; i<proteinProduct_List.length; i++){
-        totalPrice.value=totalPrice.value + proteinProduct_List[i].price!;
-      }
-    }
-
-    if(sideProduct_List.isNotEmpty){
-      for(var i=0; i<sideProduct_List.length; i++){
-        totalPrice.value=totalPrice.value + sideProduct_List[i].price!;
-      }
-    }
-
-    if(bowlProduct_List.isNotEmpty){
-      for(var i=0; i<bowlProduct_List.length; i++){
-        totalPrice.value=totalPrice.value + bowlProduct_List[i].price!;
-      }
-    }
-
-
-  }
 
 }

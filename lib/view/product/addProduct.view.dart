@@ -81,7 +81,9 @@ class _AddProductViewState extends State<AddProductView> {
 
                 children: [
                   SizedBox(height:MySize.size10),
-
+                  InkWell(
+                      onTap: ()=>selectIImage(),
+                      child: const Text("Upload")),
                 InkWell(
                   onTap: ()=>selectIImage(),
                   child: ClipRRect(
@@ -105,10 +107,8 @@ class _AddProductViewState extends State<AddProductView> {
 
                   ),
                 ),
+
                   SizedBox(height:MySize.size20),
-
-
-
                   MyText(
                     hintText: "Name",
                     controller: productController.nameController.value,
@@ -121,11 +121,15 @@ class _AddProductViewState extends State<AddProductView> {
                     hintText: "Description",
                     controller: productController.descriptionController.value,
                   ),
+                  MyText(
+                    hintText: "Description",
+                    controller: productController.descriptionController.value,
+                  ),
 
 
                   MyDropDown(
                       hint: "Select category",
-                      width: MySize.screenWidth,
+                      width: MySize.size200,
                       drop_value: productController.category.value,
                       itemFunction: ["normal","daily"].map((item) {
                         return DropdownMenuItem(

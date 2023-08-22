@@ -57,12 +57,12 @@ dependencies:
   animations: ^2.0.7
   iconsax:
   url_launcher: ^6.1.5
-  whatsapp_unilink: ^2.1.0
-
+#  whatsapp_unilink: ^2.1.0
 
   firebase_auth: ^4.6.3
   firebase_messaging: ^14.6.3
   image_picker: ^0.8.9
+  dartz: ^0.10.1
 #  iconsax:
 
 #  firebase_core: ^2.7.0
