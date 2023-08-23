@@ -61,6 +61,7 @@ class _AddProductViewState extends State<AddProductView> {
       productController.category.value=widget.product!.category!;
       productController.day.value=widget.product!.day!;
       productController.meal.value=widget.product!.meal_type!;
+     avatar=widget.product!.image.toString();
     }
  }
 
@@ -80,33 +81,36 @@ class _AddProductViewState extends State<AddProductView> {
               child: Column(
 
                 children: [
+                  SizedBox(height:MySize.size100),
+                  _image!=null?
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.memory(_image!),
+                  ):avatar!=""?
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: CachedNetworkImage(
+                      imageUrl: avatar,
+                      height: 250,
+                      width: 300,
+                      fit: BoxFit.cover,
+                    )
+
+                  ):
+                  InkWell(
+                    onTap: ()=>selectIImage(),
+                    child:
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.network("http://www.listercarterhomes.com/wp-content/uploads/2013/11/dummy-image-square.jpg"),
+                    ),
+
+
+                  ),
                   SizedBox(height:MySize.size10),
                   InkWell(
                       onTap: ()=>selectIImage(),
                       child: const Text("Upload")),
-                InkWell(
-                  onTap: ()=>selectIImage(),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child:
-                    _image!=null?
-                          Image.memory(_image!,
-                            fit: BoxFit.cover,
-                            height: MySize.size300,)
-                        :  CachedNetworkImage(
-                      imageUrl: productController.editImage.value!=""?
-                      productController.editImage.value:
-                      avatar,
-                      fit: BoxFit.cover,
-                      height: MySize.size300,
-                      width: MySize.size300,
-                    )
-                        //   : Image.network(_image!,
-                        // fit: BoxFit.cover,
-                        // height: MySize.size300,)
-
-                  ),
-                ),
 
                   SizedBox(height:MySize.size20),
                   MyText(
@@ -187,26 +191,30 @@ class _AddProductViewState extends State<AddProductView> {
                             child:  Text("${toBeginningOfSentenceCase(item)}"),
                           );
                         }).toList(),
-
                         onChanged: (newValue) async {
                           productController.meal.value = newValue.toString();
                         }),
 
-                  SizedBox(height:MySize.size50),
+                   SizedBox(height:MySize.size100),
                   productController.isLoading.value?
                       const CupertinoActivityIndicator():
-                  MyButton(
-                      text: "Save",
-                      height: MySize.size50,
-                      onPressed: (){
-                        if(productController.key.value.currentState!.validate()){
-                          if(id==null){
-                            productController.addProducts(context,_image);
-                          }else{
-                            productController.updateProducts(context,_image,id);
-                          }
-                        }
-                      }),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: FilledButton(
+                          child: const Text("Save"),
+                            onPressed: (){
+                              if(productController.key.value.currentState!.validate()){
+                                if(id==null){
+                                  productController.addProducts(context,_image);
+                                }else{
+                                  productController.updateProducts(context,_image,id);
+                                }
+                              }
+                            }),
+                      ),
+                    ],
+                  ),
                   SizedBox(height:MySize.size100),
                 ],
               ),

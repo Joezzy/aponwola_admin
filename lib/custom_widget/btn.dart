@@ -67,7 +67,7 @@ class MyButton extends StatelessWidget {
           border: Border.all(color:borderColor==null?enabledColor:borderColor!,width: 1 )
         ),
         height: height,
-        width: (screen == Screen.tab) ? width / 1.4 : width,
+        // width: (screen == Screen.tab) ? width / 1.4 : width,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

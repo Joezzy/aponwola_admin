@@ -21,6 +21,7 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
+
 class _SplashScreenState extends State<SplashScreen> {
   String? initScreen = "1";
 
@@ -40,7 +41,6 @@ class _SplashScreenState extends State<SplashScreen> {
        authController.getAuth(context);
     });
   }
-
 
   @override
   Widget build(BuildContext context) {

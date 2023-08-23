@@ -10,6 +10,7 @@ import 'package:aponwola_admin/data/category.dart';
 import 'package:aponwola_admin/data/product.dart';
 import 'package:aponwola_admin/util/imagePicker.dart';
 import 'package:aponwola_admin/util/utils.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -46,11 +47,13 @@ class _AddCategoryViewState extends State<AddCategoryView> {
   }
 
   String? id;
+  String avatar="";
   initMethod()async{
     if(widget.category !=null){
       id=widget.category!.id!;
       categoryController.nameController.value.text=widget.category!.name!;
       categoryController.descController.value.text=widget.category!.description!;
+      avatar=widget.category!.image.toString()!;
     }
 
   }
@@ -66,17 +69,34 @@ class _AddCategoryViewState extends State<AddCategoryView> {
           children: [
             SizedBox(height:MySize.size100),
             _image!=null?
-            CircleAvatar(
-              radius: 60,
-              backgroundImage: MemoryImage(_image!),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.memory(_image!),
+            ):avatar!=""?
+            ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: CachedNetworkImage(
+                  imageUrl: avatar,
+                  height: 250,
+                  width: 300,
+                  fit: BoxFit.cover,
+                )
+
             ):
             InkWell(
               onTap: ()=>selectIImage(),
-              child: const  CircleAvatar(
-                radius: 60,
-                backgroundImage: NetworkImage("http://www.listercarterhomes.com/wp-content/uploads/2013/11/dummy-image-square.jpg"),
+              child:
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.network("http://www.listercarterhomes.com/wp-content/uploads/2013/11/dummy-image-square.jpg"),
               ),
+
+
             ),
+            SizedBox(height:MySize.size10),
+            InkWell(
+                onTap: ()=>selectIImage(),
+                child: const Text("Upload")),
 
             MyText(
               hintText: "Name",
