@@ -2,7 +2,6 @@
 
 import 'package:aponwola_admin/common/error/failure.dart';
 import 'package:aponwola_admin/common/utils/usecase.dart';
-import 'package:aponwola_admin/src/category/domain/entities/categoryEntity.dart';
 import 'package:aponwola_admin/src/category/domain/repositories/category_repository.dart';
 import 'package:dartz/dartz.dart';
 

@@ -1,19 +1,12 @@
 
 import 'package:aponwola_admin/common/SizeConfig.dart';
 import 'package:aponwola_admin/common/app_theme.dart';
-import 'package:aponwola_admin/controllers/auth.controller.dart';
 import 'package:aponwola_admin/controllers/order.controller.dart';
-import 'package:aponwola_admin/custom_widget/btn.dart';
-import 'package:aponwola_admin/custom_widget/txt.dart';
 import 'package:aponwola_admin/data/order.dart';
-import 'package:aponwola_admin/data/product.dart';
-
 import 'package:aponwola_admin/view/order/foodDetail.view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:intl/intl.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class OrderDetailView extends StatefulWidget {
   OrderDetailView({Key? key,  required this.orderGroup}) : super(key: key);

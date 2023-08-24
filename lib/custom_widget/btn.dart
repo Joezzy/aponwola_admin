@@ -1,7 +1,7 @@
-import 'package:aponwola_admin/util/utils.dart';
-import 'package:flutter/material.dart';
 import 'package:aponwola_admin/common/SizeConfig.dart';
 import 'package:aponwola_admin/common/app_theme.dart';
+import 'package:aponwola_admin/util/utils.dart';
+import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
   final double width;

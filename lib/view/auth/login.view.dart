@@ -1,7 +1,6 @@
 
 
 import 'package:aponwola_admin/common/SizeConfig.dart';
-import 'package:aponwola_admin/common/app_theme.dart';
 import 'package:aponwola_admin/controllers/auth.controller.dart';
 import 'package:aponwola_admin/custom_widget/btn.dart';
 import 'package:aponwola_admin/custom_widget/txt.dart';

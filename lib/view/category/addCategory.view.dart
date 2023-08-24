@@ -3,13 +3,10 @@ import 'dart:typed_data';
 
 import 'package:aponwola_admin/common/SizeConfig.dart';
 import 'package:aponwola_admin/controllers/category.controller.dart';
-import 'package:aponwola_admin/controllers/product.controller.dart';
 import 'package:aponwola_admin/custom_widget/btn.dart';
 import 'package:aponwola_admin/custom_widget/txt.dart';
 import 'package:aponwola_admin/data/category.dart';
-import 'package:aponwola_admin/data/product.dart';
 import 'package:aponwola_admin/util/imagePicker.dart';
-import 'package:aponwola_admin/util/utils.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,7 +1,6 @@
 
 
 import 'package:aponwola_admin/common/constant.dart';
-import 'package:aponwola_admin/data/category.dart';
 import 'package:aponwola_admin/src/category/domain/entities/categoryEntity.dart';
 
 abstract class CategoryService{

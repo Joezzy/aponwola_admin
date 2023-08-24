@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 enum Screen { phone, tab, win }
 

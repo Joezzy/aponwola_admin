@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:aponwola_admin/common/SizeConfig.dart';
+import 'package:flutter/cupertino.dart';
 
 class LoaderWidget extends StatefulWidget {
   final int seconds;

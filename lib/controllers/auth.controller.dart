@@ -1,15 +1,9 @@
-import 'dart:developer';
-import 'dart:io';
-
-import 'package:aponwola_admin/common/constant.dart';
 import 'package:aponwola_admin/common/myDialog.dart';
-import 'package:aponwola_admin/data/CurrentUser.dart';
 import 'package:aponwola_admin/services/api.service.dart';
 import 'package:aponwola_admin/util/authHandler.dart';
 import 'package:aponwola_admin/view/auth/login.view.dart';
 import 'package:aponwola_admin/view/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,11 +1,8 @@
 
 import 'package:aponwola_admin/common/SizeConfig.dart';
 import 'package:aponwola_admin/controllers/category.controller.dart';
-import 'package:aponwola_admin/controllers/product.controller.dart';
 import 'package:aponwola_admin/data/category.dart';
-import 'package:aponwola_admin/data/product.dart';
 import 'package:aponwola_admin/view/category/addCategory.view.dart';
-import 'package:aponwola_admin/view/product/addProduct.view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
